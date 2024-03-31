@@ -1,0 +1,40 @@
+.profile_container {
+    background-image: url('/images/theme.png');
+    position: relative;
+    width: 100%;
+    height: 30vh;
+
+    .title {
+        color: var(--primary-color);
+        font-size: 7rem;
+        font-weight: 500;
+    }
+
+    .form {
+        position: absolute;
+        top: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        justify-content: space-around;
+    }
+
+    .input_container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        .input {
+            width: 100%;
+            height: 50px;
+            border: 1px solid var(--primary-color);
+        }
+    }
+
+    .button {
+        background-color: var(--primary-color);
+        color: #fff;
+        padding: 0;
+        height: 50px;
+        width: 100%;
+    }
+}

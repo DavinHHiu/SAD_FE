@@ -1,0 +1,15 @@
+.container {
+    width: 50vw;
+    min-width: 450px;
+    height: 65vh;
+    min-height: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    gap: 40px;
+}

@@ -1,0 +1,40 @@
+.payment_container {
+    position: sticky;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    width: 100%;
+    min-width: 1200px;
+    height: 150px;
+    padding: 50px;
+    background-color: #fff;
+    box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.05);
+
+    .payment_info {
+        flex: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 50px;
+        font-size: 2rem;
+        font-weight: 500;
+        .payment_select_all {
+            display: flex;
+            align-items: center;
+            font-weight: 400;
+            gap: 20px;
+        }
+        .payment_info_second {
+            margin-right: 50px;
+            font-size: 3rem;
+            color: var(--primary-color);
+        }
+    }
+
+    .payment_button {
+        color: #fff;
+        background-color: var(--primary-color);
+    }
+}

@@ -1,0 +1,26 @@
+.body_container {
+    background-color: rgb(0, 0, 0, 0.02);
+    .container {
+        width: 70vw;
+        margin: auto;
+        .title_container {
+            width: 100%;
+            min-width: 1200px;
+            background-color: #fff;
+            padding: 0 50px;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.05);
+
+            .title {
+                font-size: 10rem;
+                font-weight: 500;
+                display: block;
+            }
+        }
+        .cart_items_container {
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
+}
