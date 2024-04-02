@@ -2,24 +2,25 @@ import Logo from '../../assets/icons/logo.svg?react';
 import UserAva from '../../assets/icons/user-ava.svg?react';
 import Cart from '../../assets/icons/cart.svg?react';
 import style from './Header.module.scss';
+import { Link } from 'react-router-dom';
 
 function Header() {
     return (
         <header className={style.header_container}>
-            <div className={style.header_logo}>
+            <Link href="/" className={style.header_logo}>
                 <Logo />
                 <span className={style.corporate_name}>Price Tag</span>
-            </div>
+            </Link>
             <div className={style.header_nav}>
                 <ul className={style.header_nav_list}>
                     <li className={style.header_nav_item}>
-                        <a href="/">Home</a>
+                        <Link to="/">Home</Link>
                     </li>
                     <li className={style.header_nav_item}>
-                        <a href="/search">Search</a>
+                        <Link to="/search">Search</Link>
                     </li>
                     <li className={style.header_nav_item}>
-                        <a href="/profile">Profile</a>
+                        <Link to="/profile">Profile</Link>
                     </li>
                 </ul>
             </div>
