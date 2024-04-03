@@ -33,6 +33,10 @@
                     display: flex;
                     gap: 100px;
 
+                    .product_name {
+                        width: 230px;
+                    }
+
                     .product_type {
                         color: var(--primary-color);
                     }
@@ -48,15 +52,21 @@
             gap: 30px;
             .quantity_container {
                 display: flex;
-                gap: 5px;
                 .quantity_input {
                     text-align: center;
                     width: 50px;
                     padding: 2px;
+                    border-top: 1px solid #ccc;
+                    border-bottom: 1px solid #ccc;
+                    border-radius: 0;
                 }
                 .quantity_change {
                     padding: 10px 15px;
                     font-size: 2rem;
+                    border-radius: 0;
+                    border: 1px solid #ccc;
+                    background-color: transparent;
+                    min-width: 50px;
                     cursor: pointer;
                 }
             }

@@ -7,9 +7,9 @@ import Register from '../pages/Register';
 import Cart from '../pages/Cart';
 import Order from '../pages/Order';
 
-var login = localStorage.getItem('user_id');
-
 export default function Router() {
+    const login = localStorage.getItem('user_id');
+
     return (
         <BrowserRouter>
             <Routes>
@@ -17,9 +17,9 @@ export default function Router() {
                 <Route path="/search" element={<Search />} />
                 <Route path="/login" element={!login ? <Login /> : <Navigate to="/" />} />
                 <Route path="/register" element={!login ? <Register /> : <Navigate to="/" />} />
-                <Route path="/profile" element={login ? <Profile /> : <Login />} />
-                <Route path="/cart" element={login ? <Cart /> : <Login />} />
-                <Route path="/order" element={login ? <Order /> : <Login />} />
+                <Route path="/profile" element={login ? <Profile /> : <Navigate to="/login" />} />
+                <Route path="/cart" element={login ? <Cart /> : <Navigate to="/login" />} />
+                <Route path="/order" element={login ? <Order /> : <Navigate to="/login" />} />
             </Routes>
         </BrowserRouter>
     );

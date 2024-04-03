@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Form from '../../components/Form';
 import style from './Login.module.scss';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function Login() {
     const navigate = useNavigate();
@@ -51,7 +51,7 @@ export default function Login() {
                 <button className={style.button} onClick={handleLogin}>
                     Login
                 </button>
-                <Link href="/register" class={style.register_link}>
+                <Link to="/register" class={style.register_link}>
                     Đăng ký
                 </Link>
             </Form>

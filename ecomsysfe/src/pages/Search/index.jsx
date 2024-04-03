@@ -6,8 +6,6 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 function Search() {
-    const [data, setData] = useState([]);
-
     const [books, setBooks] = useState([]);
     const [clothes, setClothes] = useState([]);
     const [mobilePhones, setMobilePhones] = useState([]);

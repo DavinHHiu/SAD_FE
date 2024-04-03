@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import DefaultLayout from '../../components/Layout/DefaultLayout';
+import axios from 'axios';
 import ProductList from '../../components/ProductList';
 import SearchBar from '../../components/SearchBar';
 import style from './HomePage.module.scss';
 import request from '../../utils/request';
-import axios from 'axios';
+import formatNumber from '../../utils/formatNumber';
 
 function Home() {
     const [books, setBooks] = useState([]);
