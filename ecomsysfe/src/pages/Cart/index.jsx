@@ -16,7 +16,7 @@ export default function Cart() {
             })
             .then((response) => {
                 if (response.status === 200 && response.data) {
-                    console.log(response.data['cart-items']);
+                    // console.log(response.data['cart-items']);
                     setCartItems(response.data['cart-items']);
                 }
             });

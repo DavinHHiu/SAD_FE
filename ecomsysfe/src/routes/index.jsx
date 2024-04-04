@@ -15,6 +15,7 @@ export default function Router() {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/search" element={<Search />} />
+                <Route path="/search/:q" element={<Search />} />
                 <Route path="/login" element={!login ? <Login /> : <Navigate to="/" />} />
                 <Route path="/register" element={!login ? <Register /> : <Navigate to="/" />} />
                 <Route path="/profile" element={login ? <Profile /> : <Navigate to="/login" />} />

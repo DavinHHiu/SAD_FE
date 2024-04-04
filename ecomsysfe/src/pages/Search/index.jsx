@@ -4,30 +4,36 @@ import SearchBar from '../../components/SearchBar';
 import ProductList from '../../components/ProductList';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useParams } from 'react-router-dom';
 
 function Search() {
-    const [books, setBooks] = useState([]);
-    const [clothes, setClothes] = useState([]);
-    const [mobilePhones, setMobilePhones] = useState([]);
+    const { q } = useParams();
+
+    const [keySearch, setKeySearch] = useState(q);
+    const [searchItems, setSearchItems] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:8000/api/books').then((res) => {
-            setBooks(res.data);
+        const key = keySearch || '';
+        axios.get(`http://localhost:8000/api/search/${key}`).then((res) => {
+            console.log(res.data);
+            setSearchItems(res.data);
         });
-        axios.get('http://localhost:8000/api/clothes').then((res) => {
-            setClothes(res.data);
-        });
-        axios.get('http://localhost:8000/api/mobile_phones').then((res) => {
-            setMobilePhones(res.data);
-        });
-    }, []);
+    }, [keySearch]);
+
+    const handleSearch = (word) => {
+        setKeySearch(word);
+    };
 
     return (
         <DefaultLayout>
             <div className={style.container}>
-                <SearchBar className={`${style.search_bar} ${style.search_button}`} />
+                <SearchBar
+                    className={`${style.search_bar} ${style.search_button}`}
+                    keys={q}
+                    handleSearch={handleSearch}
+                />
                 <div className={style.product_list_container}>
-                    <ProductList products={[...books, ...clothes, ...mobilePhones]} inSearchPage={true} />
+                    <ProductList products={[...searchItems]} inSearchPage={true} />
                 </div>
             </div>
         </DefaultLayout>

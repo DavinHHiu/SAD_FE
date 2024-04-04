@@ -5,7 +5,7 @@ import axios from 'axios';
 
 export default function CartIcon({ addToCart }) {
     const [cartItems, setCartItems] = useState([]);
-    console.log(addToCart);
+    // console.log(addToCart);
 
     useEffect(() => {
         axios
@@ -13,7 +13,7 @@ export default function CartIcon({ addToCart }) {
                 user_id: localStorage.getItem('user_id'),
             })
             .then((response) => {
-                console.log(response.data['cart-items']);
+                // console.log(response.data['cart-items']);
                 setCartItems(response.data['cart-items']);
             });
     }, [addToCart]);

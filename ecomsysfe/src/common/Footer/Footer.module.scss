@@ -1,0 +1,103 @@
+.footer_container {
+    font-size: 1.2rem;
+    margin-top: 100px;
+    width: 100%;
+
+    .footer_above_container {
+        background-color: #fbfbfb;
+        padding: 50px 0;
+        .service_container {
+            display: flex;
+            gap: 70px;
+            width: 70%;
+            padding: 50px 0;
+            border-top: 1px solid #f5f5f5;
+            border-bottom: 1px solid #f5f5f5;
+            margin: auto;
+            .service_title {
+                font-weight: 600;
+                margin-bottom: 20px;
+                min-width: 207px;
+            }
+            .service_list {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+                .service_item {
+                    min-width: 207px;
+                }
+
+                .social {
+                    display: flex;
+                    align-items: center;
+                    gap: 7px;
+                }
+            }
+            .cor_list {
+                width: 200px;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 7px;
+                margin-bottom: 25px;
+            }
+
+            .app_store_container {
+                display: flex;
+                gap: 10px;
+
+                .app_store {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                }
+            }
+
+            .logo_item {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: #fff;
+                padding: 5px;
+                box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
+            }
+        }
+    }
+    .footer_below_container {
+        background-color: #f5f5f5;
+        color: #333;
+        .info_container {
+            padding: 40px 0;
+            margin: auto;
+            width: 70%;
+            text-align: center;
+
+            .regular_container {
+                display: flex;
+                margin: auto;
+                width: 70%;
+
+                .regular {
+                    padding: 0 25px;
+                    border-right: 1px solid rgba(0, 0, 0, 0.07);
+                    display: block;
+                    text-align: center;
+                }
+
+                .regular_last {
+                    padding: 0 25px;
+                    display: block;
+                    text-align: center;
+                }
+            }
+
+            .cor_name {
+                margin: 40px 0 25px 0;
+                text-transform: uppercase;
+            }
+            .info {
+                margin-bottom: 7px;
+            }
+        }
+    }
+}

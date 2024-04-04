@@ -47,7 +47,7 @@ export default function Profile() {
             axios
                 .put('http://localhost:8000/api/profile/', { ...user, password: newPassword })
                 .then((response) => {
-                    console.log(response);
+                    // console.log(response);
                 });
         }
     };

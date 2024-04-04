@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
-import DefaultLayout from '../../components/Layout/DefaultLayout';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+
+import DefaultLayout from '../../components/Layout/DefaultLayout';
 import ProductList from '../../components/ProductList';
 import SearchBar from '../../components/SearchBar';
 import style from './HomePage.module.scss';
@@ -8,6 +10,8 @@ import request from '../../utils/request';
 import formatNumber from '../../utils/formatNumber';
 
 function Home() {
+    const navigate = useNavigate();
+
     const [books, setBooks] = useState([]);
     const [clothes, setClothes] = useState([]);
     const [mobilePhones, setMobilePhones] = useState([]);
@@ -24,12 +28,16 @@ function Home() {
         });
     }, []);
 
+    const handleSearch = (keyword) => {
+        navigate(`/search/${keyword}`);
+    };
+
     return (
         <DefaultLayout>
             <div>
                 <div className={style.background_container}>
                     <span className={style.corporate_name}>Price Tag</span>
-                    <SearchBar />
+                    <SearchBar handleSearch={handleSearch} />
                 </div>
                 <div className={style.product_list_container}>
                     <ProductList products={books} type={'Books'} />
