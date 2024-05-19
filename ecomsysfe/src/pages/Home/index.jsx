@@ -17,14 +17,24 @@ function Home() {
     const [mobilePhones, setMobilePhones] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:8000/api/books').then((res) => {
-            setBooks(res.data);
-        });
-        axios.get('http://localhost:8000/api/clothes').then((res) => {
-            setClothes(res.data);
-        });
-        axios.get('http://localhost:8000/api/mobile_phones').then((res) => {
-            setMobilePhones(res.data);
+        axios.get('http://localhost:8001/api/products').then((res) => {
+            let books = [];
+            let clothes = [];
+            let mobilePhones = [];
+            res.data.forEach(product => {
+                if (product.type === 'book') {
+                    books.push(product);
+                }
+                if (product.type === 'cloth') {
+                    clothes.push(product);
+                }
+                if (product.type === 'mobile') {
+                    mobilePhones.push(product);
+                }
+            })
+            setBooks(books);
+            setClothes(clothes);
+            setMobilePhones(mobilePhones);
         });
     }, []);
 
@@ -32,12 +42,18 @@ function Home() {
         navigate(`/search/${keyword}`);
     };
 
+    const handleEnterSearch = (event, keyword) => {
+        if (event.keyCode === 13) {
+            navigate(`/search/${keyword}`);
+        }
+    };
+
     return (
         <DefaultLayout>
             <div>
                 <div className={style.background_container}>
                     <span className={style.corporate_name}>Price Tag</span>
-                    <SearchBar handleSearch={handleSearch} />
+                    <SearchBar handleSearch={handleSearch} handleEnterSearch={handleEnterSearch} />
                 </div>
                 <div className={style.product_list_container}>
                     <ProductList products={books} type={'Books'} />

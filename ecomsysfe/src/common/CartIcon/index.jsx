@@ -7,16 +7,16 @@ export default function CartIcon({ addToCart }) {
     const [cartItems, setCartItems] = useState([]);
     // console.log(addToCart);
 
-    useEffect(() => {
-        axios
-            .post('http://localhost:8000/api/cart/', {
-                user_id: localStorage.getItem('user_id'),
-            })
-            .then((response) => {
-                // console.log(response.data['cart-items']);
-                setCartItems(response.data['cart-items']);
-            });
-    }, [addToCart]);
+    // useEffect(() => {
+    //     axios
+    //         .post('http://localhost:8000/api/cart/', {
+    //             user_id: localStorage.getItem('user_id'),
+    //         })
+    //         .then((response) => {
+    //             // console.log(response.data['cart-items']);
+    //             setCartItems(response.data['cart-items']);
+    //         });
+    // }, [addToCart]);
 
     return (
         <div className={style.container}>

@@ -15,12 +15,15 @@ export default function Login() {
         const value = e.target.value;
         setData({
             ...data,
-            [e.target.name]: value,
+            [e.target.name]: value.trim(),
         });
     };
 
     const handleLogin = (e) => {
-        axios.post('http://localhost:8000/api/login/', data).then((response) => {
+        if (!data.username || !data.password) {
+            alert("Vui lòng điền đầy đủ thông tin");
+        }
+        axios.post('http://localhost:8007/api/login/', data).then((response) => {
             if (response.status === 200 && response.data.user_id) {
                 localStorage.setItem('user_id', response.data.user_id);
                 navigate('/');

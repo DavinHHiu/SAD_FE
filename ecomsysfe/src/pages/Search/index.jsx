@@ -15,13 +15,18 @@ function Search() {
     useEffect(() => {
         const key = keySearch || '';
         axios.get(`http://localhost:8000/api/search/${key}`).then((res) => {
-            console.log(res.data);
-            setSearchItems(res.data);
+            setSearchItems([...res.data['books'], ...res.data['clothes'], ...res.data['mobile_phones']]);
         });
     }, [keySearch]);
 
     const handleSearch = (word) => {
         setKeySearch(word);
+    };
+
+    const handleEnterSearch = (event, word) => {
+        if (event.keyCode === 13) {
+            setKeySearch(word);
+        }
     };
 
     return (
@@ -31,6 +36,7 @@ function Search() {
                     className={`${style.search_bar} ${style.search_button}`}
                     keys={q}
                     handleSearch={handleSearch}
+                    handleEnterSearch={handleEnterSearch}
                 />
                 <div className={style.product_list_container}>
                     <ProductList products={[...searchItems]} inSearchPage={true} />

@@ -9,7 +9,6 @@ function DefaultLayout({ children }) {
             <div className={style.container}>
                 <div className={style.content}>{children}</div>
             </div>
-            <Footer />
         </>
     );
 }

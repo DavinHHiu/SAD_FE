@@ -1,0 +1,84 @@
+.payment_container {
+    padding: 50px 50px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.05);
+    font-weight: 500;
+    gap: 30px;
+
+    .highlight {
+        color: #42b883;
+        font-weight: 400;
+    }
+
+    .input_address {
+        padding: 5px 0;
+        line-height: 2;
+        border-radius: 0;
+        border-bottom: 1px solid var(--primary-color);
+    }
+
+    .shipment_info_container {
+        display: flex;
+        justify-content: space-between;
+
+        .shipping_info {
+            display: flex;
+            gap: 20px;
+        }
+
+        .shipping_fee {
+            color: var(--primary-color);
+        }
+    }
+
+    .payment_method {
+        display: flex;
+        gap: 20px;
+    }
+
+    .total_container {
+        padding: 50px 0;
+        border-top: 1px solid var(--primary-color);
+        border-bottom: 1px solid var(--primary-color);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        .total {
+            display: flex;
+            font-weight: 500;
+            gap: 100px;
+
+            .total_title {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+            .total_price {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                gap: 20px;
+
+                .price {
+                    font-size: 2.2rem;
+                    color: var(--primary-color);
+                }
+            }
+        }
+    }
+    .button_container {
+        display: flex;
+        justify-content: flex-end;
+        .confirm_button {
+            padding: 12px 70px;
+            font-size: 1.6rem;
+            font-weight: 500;
+            border-radius: 0;
+            color: #fff;
+            background-color: var(--primary-color);
+        }
+    }
+}

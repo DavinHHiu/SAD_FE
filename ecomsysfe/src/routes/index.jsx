@@ -6,6 +6,7 @@ import Login from '../pages/Login';
 import Register from '../pages/Register';
 import Cart from '../pages/Cart';
 import Order from '../pages/Order';
+import ProductDetail from '../pages/ProductDetail';
 
 export default function Router() {
     const login = localStorage.getItem('user_id');
@@ -21,6 +22,7 @@ export default function Router() {
                 <Route path="/profile" element={login ? <Profile /> : <Navigate to="/login" />} />
                 <Route path="/cart" element={login ? <Cart /> : <Navigate to="/login" />} />
                 <Route path="/order" element={login ? <Order /> : <Navigate to="/login" />} />
+                <Route path="/product/:id" element={<ProductDetail />} />
             </Routes>
         </BrowserRouter>
     );

@@ -16,17 +16,32 @@ export default function Register() {
         const value = e.target.value;
         setData({
             ...data,
-            [e.target.name]: value,
+            [e.target.name]: value.trim(),
         });
     };
 
     const handleRegister = () => {
-        axios.post('http://localhost:8000/api/register/', data).then((response) => {
-            if (response.status === 201 && response.data) {
-                localStorage.setItem('user_id', JSON.stringify(response.data.user_id));
-                navigate('/');
-            }
-        });
+        if (!data.email || !data.username || !data.password) {
+            alert("Vui lòng điền đầy đủ thông tin");
+        }
+        axios
+            .post('http://localhost:8007/api/register/', data)
+            .then((response) => {
+                if (response.status === 201 && response.data) {
+                    console.log(response.data);
+                    localStorage.setItem('user_id', JSON.stringify(response.data.id));
+                    alert("Đăng ký thành công");
+                    navigate('/');
+                }
+            })
+            .catch((error) => {
+                alert(error.response?.data);
+                setData({
+                    email: '',
+                    username: '',
+                    password: '',
+                });
+            })
     };
 
     return (

@@ -1,0 +1,30 @@
+.shipment_container {
+    padding: 50px 50px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.05);
+    font-weight: 500;
+    gap: 30px;
+
+    .input_address {
+        padding: 5px 0;
+        line-height: 2;
+        border-radius: 0;
+        border-bottom: 1px solid var(--primary-color);
+    }
+
+    .shipment_info_container {
+        display: flex;
+        justify-content: space-between;
+
+        .shipping_info {
+            display: flex;
+            gap: 20px;
+        }
+
+        .shipping_fee {
+            color: var(--primary-color);
+        }
+    }
+}
